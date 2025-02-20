@@ -10,6 +10,8 @@ import SwiftData
 
 @main
 struct MoodieApp: App {
+    @StateObject private var notificationManager = NotificationManager.shared
+    
     var sharedModelContainer: ModelContainer = {
         let schema = Schema([
             Item.self,
@@ -26,6 +28,9 @@ struct MoodieApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .onAppear {
+                    notificationManager.requestAuthorization()
+                }
         }
         .modelContainer(sharedModelContainer)
     }

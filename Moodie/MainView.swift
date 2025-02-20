@@ -121,3 +121,10 @@ struct TodoItem: View{
        }
    }
 }
+
+// 预览
+struct MainView_Previews: PreviewProvider {
+    static var previews: some View {
+        MainView()
+    }
+}

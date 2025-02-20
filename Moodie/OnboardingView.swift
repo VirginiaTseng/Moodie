@@ -57,8 +57,8 @@ struct OnboardingView: View {
             )
             
             
-            Text("\(selection)")
-                .foregroundColor(.white)
+//            Text("\(selection)")
+//                .foregroundColor(.white)
         }
         
      

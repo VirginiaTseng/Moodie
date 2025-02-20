@@ -9,6 +9,7 @@ import SwiftUI
 import MapKit
 
 struct MapView: View {
+    @StateObject private var locationManager = LocationManager()
     @State private var searchText = ""
     @State private var region = MKCoordinateRegion(
         center: CLLocationCoordinate2D(latitude: 37.7749, longitude: -122.4194),
@@ -42,18 +43,31 @@ struct MapView: View {
                 
                 // 地图视图
                 ZStack(alignment: .trailing) {
-                    Map(coordinateRegion: $region)
+                    Map(coordinateRegion: $locationManager.region,
+                        showsUserLocation: true,
+                        userTrackingMode: .constant(.follow))
                         .edgesIgnoringSafeArea(.bottom)
                     
                     // 地图控制按钮
                     VStack(spacing: 8) {
                         MapControlButton(icon: "layers.fill") {}
-                        MapControlButton(icon: "location.fill") {}
+                        MapControlButton(icon: "location.fill") {
+                            // 重新定位到用户位置
+                            if let location = locationManager.location {
+                                withAnimation {
+                                    locationManager.region = MKCoordinateRegion(
+                                        center: location.coordinate,
+                                        span: MKCoordinateSpan(latitudeDelta: 0.05, longitudeDelta: 0.05)
+                                    )
+                                }
+                            }
+                        }
                         MapControlButton(icon: "plus") {}
                         MapControlButton(icon: "minus") {}
                     }
                     .padding(.trailing)
                 }
+                
                 
                 // 底部信息卡片
                 VStack(spacing: 16) {

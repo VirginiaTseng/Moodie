@@ -43,6 +43,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		CB1EFD9D2D67AA24009C8FE7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		CB4C9C452D6400D80074A095 /* Moodie.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Moodie.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CB4C9C572D6400D90074A095 /* MoodieTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MoodieTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CB4C9C612D6400D90074A095 /* MoodieUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MoodieUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -65,6 +66,16 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
+		CB1EFD8C2D66D578009C8FE7 /* Service */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = Service;
+			sourceTree = "<group>";
+		};
+		CB1EFD902D66E3B4009C8FE7 /* ViewModel */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		CB4C9C5A2D6400D90074A095 /* MoodieTests */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			path = MoodieTests;
@@ -160,6 +171,9 @@
 		CB4C9C942D64A4B70074A095 /* Moodie */ = {
 			isa = PBXGroup;
 			children = (
+				CB1EFD9D2D67AA24009C8FE7 /* Info.plist */,
+				CB1EFD902D66E3B4009C8FE7 /* ViewModel */,
+				CB1EFD8C2D66D578009C8FE7 /* Service */,
 				CB4C9CD82D66954D0074A095 /* ThemeToggleButton.swift */,
 				CB4C9CB62D64DD2D0074A095 /* Graphics */,
 				CB4C9CB42D64C1660074A095 /* EmergencyView.swift */,
@@ -201,6 +215,8 @@
 			dependencies = (
 			);
 			fileSystemSynchronizedGroups = (
+				CB1EFD8C2D66D578009C8FE7 /* Service */,
+				CB1EFD902D66E3B4009C8FE7 /* ViewModel */,
 				CB4C9CA02D64A4C00074A095 /* watch */,
 				CB4C9CA12D64A50A0074A095 /* Controller */,
 				CB4C9CA22D64AACE0074A095 /* Model */,
@@ -511,6 +527,9 @@
 				DEVELOPMENT_TEAM = 9LBU4698Q5;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Moodie/Info.plist;
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "We need your location to provide precise weather information";
+				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = "We need your location to provide precise weather information";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -541,6 +560,9 @@
 				DEVELOPMENT_TEAM = 9LBU4698Q5;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Moodie/Info.plist;
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "We need your location to provide precise weather information";
+				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = "We need your location to provide precise weather information";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

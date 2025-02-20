@@ -21,7 +21,6 @@ struct ContentView: View {
         
         if hasSeenOnboarding {
             TabView(selection: $selectedTab) {
-                Text("welcome")
                         HomeView()
                             .tabItem {
                                 Image(systemName: "house.fill")
@@ -42,7 +41,7 @@ struct ContentView: View {
 //                                Text("Emergency")
 //                            }
 //                            .tag(2)
-//                        
+//
                         CommunityView()
                             .tabItem {
                                 Image(systemName: "heart.fill")
@@ -58,6 +57,7 @@ struct ContentView: View {
                             .tag(4)
                     }
                     .accentColor(.purple)
+                    .preferredColorScheme(.light)
             
 //            VStack {
 //                //MainView() // 进入主页面

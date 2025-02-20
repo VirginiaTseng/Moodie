@@ -1,6 +1,8 @@
 import SwiftUI
 
 struct HomeView: View {
+    @StateObject private var notificationManager = NotificationManager.shared
+    
     var body: some View {
         NavigationView {
             ScrollView {
@@ -23,11 +25,24 @@ struct HomeView: View {
             .toolbar {
                 ToolbarItem(placement: .navigationBarTrailing) {
                     HStack(spacing: 15) {
-                        Button(action: {}) {
+                        Button(action: {
+                            // 发送即时通知
+                            notificationManager.sendImmediateNotification(
+                                title: "Moodie Safety Alert",
+                                body: "Time to check your safety status!"
+                            )
+                        }) {
                             Image(systemName: "bell.fill")
                                 .foregroundColor(.purple)
                         }
-                        Button(action: {}) {
+                        Button(action: {
+                            // 设置每30分钟发送一次通知
+                            notificationManager.scheduleNotification(
+                                title: "Moodie Safety Reminder",
+                                body: "Regular safety check reminder",
+                                interval: 1800 // 30 minutes in seconds
+                            )
+                        }) {
                             Image(systemName: "moon.fill")
                                 .foregroundColor(.purple)
                         }
@@ -37,6 +52,9 @@ struct HomeView: View {
                         }
                     }
                 }
+            }
+            .onAppear {
+                notificationManager.requestAuthorization()
             }
         }
     }
@@ -154,7 +172,7 @@ struct ActionButton: View {
 
 // 天气和安全信息卡片
 struct WeatherSafetyCard: View {
-    @StateObject private var weatherService = WeatherService()
+    @StateObject private var weatherService = MoWeatherService()
     @State private var isLoading = false
     
     var body: some View {
@@ -291,13 +309,35 @@ struct WeatherSafetyCard: View {
     
     private func refreshWeather() {
         isLoading = true
-        // Here we need to get user location and call weather service
-        // Example coordinates (need to be replaced with actual location)
-        weatherService.fetchWeather(latitude: 43.6532, longitude: -79.3832)
         
-        // Simulate loading completion
-        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-            isLoading = false
+        //mockData
+        weatherService.fetchMockWeather()
+        isLoading = false
+        
+//        Task {
+//               await weatherService.fetchWeather(latitude: 43.6532, longitude: -79.3832)
+//               await MainActor.run {
+//                   isLoading = false
+//               }
+//           }
+    }
+    
+    func getWeatherIcon(condition: String) -> String {
+        switch condition.lowercased() {
+        case "clear":
+            return "sun.max"
+        case "cloudy":
+            return "cloud"
+        case "partly cloudy":
+            return "cloud.sun"
+        case "rain":
+            return "cloud.rain"
+        case "snow":
+            return "cloud.snow"
+        case "thunderstorm":
+            return "cloud.bolt"
+        default:
+            return "questionmark"
         }
     }
 }
@@ -373,3 +413,10 @@ struct RecentActivityCard: View {
         .shadow(radius: 5)
     }
 } 
+
+// 预览
+struct HomeView_Previews: PreviewProvider {
+    static var previews: some View {
+        HomeView()
+    }
+}
