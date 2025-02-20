@@ -154,6 +154,9 @@ struct ActionButton: View {
 
 // 天气和安全信息卡片
 struct WeatherSafetyCard: View {
+    @StateObject private var weatherService = WeatherService()
+    @State private var isLoading = false
+    
     var body: some View {
         VStack(alignment: .leading, spacing: 15) {
             HStack {
@@ -162,37 +165,35 @@ struct WeatherSafetyCard: View {
                     .bold()
                 Spacer()
                 HStack {
-                    Text("Updated 5 min ago")
+                    Text("Updated \(Date(), style: .relative)")
                         .font(.caption)
                         .foregroundColor(.gray)
-                    Image(systemName: "arrow.clockwise")
-                        .foregroundColor(.purple)
+                    Button(action: refreshWeather) {
+                        Image(systemName: "arrow.clockwise")
+                            .foregroundColor(.purple)
+                            .rotationEffect(.degrees(isLoading ? 360 : 0))
+                    }
                 }
             }
             
             HStack(spacing: 15) {
-                // 天气警报
+                // Weather Alert Card
                 VStack(alignment: .leading, spacing: 8) {
                     Text("Weather Alert")
                         .font(.headline)
-                    HStack {
-                        Image(systemName: "snowflake")
-                        Text("-2°C")
-                            .font(.title2)
-                            .bold()
-                    }
-                    Text("Light Snow")
-                    
-                    HStack {
-                        Image(systemName: "exclamationmark.triangle.fill")
-                            .foregroundColor(.yellow)
-                        Text("Icy Roads")
-                            .font(.caption)
+                    if let weather = weatherService.weatherData {
+                        HStack {
+                            Image(systemName: getWeatherIcon(condition: weather.condition))
+                            Text("\(Int(weather.temperature))°C")
+                                .font(.title2)
+                                .bold()
+                        }
+                        Text(weather.condition)
                         
-                        Image(systemName: "eye.slash")
-                            .foregroundColor(.gray)
-                        Text("Low Visibility")
-                            .font(.caption)
+                        // Weather Warnings
+                        WeatherAlerts(temperature: weather.temperature)
+                    } else {
+                        ProgressView()
                     }
                 }
                 .frame(maxWidth: .infinity)
@@ -200,7 +201,7 @@ struct WeatherSafetyCard: View {
                 .background(Color.blue.opacity(0.1))
                 .cornerRadius(12)
                 
-                // 安全等级
+                // Safety Level Card
                 VStack(alignment: .leading, spacing: 8) {
                     Text("Safety Level")
                         .font(.headline)
@@ -228,17 +229,98 @@ struct WeatherSafetyCard: View {
                 .cornerRadius(12)
             }
             
-            // 环境指标
+            // Environment Indicators
             HStack(spacing: 20) {
-                EnvironmentIndicator(icon: "sun.max.fill", title: "UV Index", value: "Low", iconColor: .orange)
-                EnvironmentIndicator(icon: "leaf.fill", title: "Air Quality", value: "Good", iconColor: .green)
-                EnvironmentIndicator(icon: "eye.fill", title: "Visibility", value: "Clear", iconColor: .blue)
+                if let weather = weatherService.weatherData {
+                    EnvironmentIndicator(
+                        icon: "sun.max.fill",
+                        title: "UV Index",
+                        value: getUVIndexDescription(weather.uvIndex),
+                        iconColor: .orange
+                    )
+                    EnvironmentIndicator(
+                        icon: "leaf.fill",
+                        title: "Air Quality",
+                        value: getAQIDescription(weather.airQuality),
+                        iconColor: .green
+                    )
+                    EnvironmentIndicator(
+                        icon: "eye.fill",
+                        title: "Visibility",
+                        value: getVisibilityDescription(weather.visibility),
+                        iconColor: .blue
+                    )
+                }
             }
         }
         .padding()
-        .background(Color.white)
+        .background(Color(UIColor.systemBackground))
         .cornerRadius(15)
         .shadow(radius: 5)
+        .onAppear(perform: refreshWeather)
+    }
+    
+    private func getUVIndexDescription(_ index: Int) -> String {
+        switch index {
+        case 0...2: return "Low"
+        case 3...5: return "Moderate"
+        case 6...7: return "High"
+        case 8...10: return "Very High"
+        default: return "Extreme"
+        }
+    }
+    
+    private func getAQIDescription(_ aqi: Int) -> String {
+        switch aqi {
+        case 0...50: return "Good"
+        case 51...100: return "Moderate"
+        case 101...150: return "Fair"
+        default: return "Poor"
+        }
+    }
+    
+    private func getVisibilityDescription(_ visibility: Double) -> String {
+        if visibility > 10 {
+            return "Clear"
+        } else if visibility > 5 {
+            return "Good"
+        } else {
+            return "Limited"
+        }
+    }
+    
+    private func refreshWeather() {
+        isLoading = true
+        // Here we need to get user location and call weather service
+        // Example coordinates (need to be replaced with actual location)
+        weatherService.fetchWeather(latitude: 43.6532, longitude: -79.3832)
+        
+        // Simulate loading completion
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+            isLoading = false
+        }
+    }
+}
+
+struct WeatherAlerts: View {
+    let temperature: Double
+    
+    var body: some View {
+        HStack {
+            if temperature < 0 {
+                Image(systemName: "exclamationmark.triangle.fill")
+                    .foregroundColor(.yellow)
+                Text("Icy Roads")
+                    .font(.caption)
+            }
+            
+            if temperature < -5 {
+                Image(systemName: "eye.slash")
+                    .foregroundColor(.gray)
+                Text("Low Visibility")
+                    .font(.caption)
+            }
+        }
     }
 }
 
