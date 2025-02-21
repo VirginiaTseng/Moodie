@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CB1EFDFC2D683114009C8FE7 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB1EFDFB2D683114009C8FE7 /* WidgetKit.framework */; };
+		CB1EFDFE2D683114009C8FE7 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB1EFDFD2D683114009C8FE7 /* SwiftUI.framework */; };
+		CB1EFE092D683116009C8FE7 /* MoodieWidgetExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = CB1EFDF92D683114009C8FE7 /* MoodieWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		CB4C9C952D64A4B70074A095 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB4C9C892D64A4B70074A095 /* MainView.swift */; };
 		CB4C9C962D64A4B70074A095 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB4C9C8A2D64A4B70074A095 /* OnboardingView.swift */; };
 		CB4C9C982D64A4B70074A095 /* ConnectionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB4C9C8E2D64A4B70074A095 /* ConnectionManager.swift */; };
@@ -26,6 +29,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		CB1EFE072D683116009C8FE7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CB4C9C3D2D6400D80074A095 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CB1EFDF82D683114009C8FE7;
+			remoteInfo = MoodieWidgetExtension;
+		};
 		CB4C9C582D6400D90074A095 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = CB4C9C3D2D6400D80074A095 /* Project object */;
@@ -42,8 +52,27 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		CB1EFE0A2D683116009C8FE7 /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				CB1EFE092D683116009C8FE7 /* MoodieWidgetExtension.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		CB1EFD9D2D67AA24009C8FE7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		CB1EFDF92D683114009C8FE7 /* MoodieWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = MoodieWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		CB1EFDFB2D683114009C8FE7 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
+		CB1EFDFD2D683114009C8FE7 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
+		CB1EFE0F2D68312F009C8FE7 /* Moodie.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Moodie.entitlements; sourceTree = "<group>"; };
+		CB1EFE102D68313A009C8FE7 /* MoodieWidgetExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MoodieWidgetExtension.entitlements; sourceTree = "<group>"; };
 		CB4C9C452D6400D80074A095 /* Moodie.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Moodie.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CB4C9C572D6400D90074A095 /* MoodieTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MoodieTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CB4C9C612D6400D90074A095 /* MoodieUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MoodieUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -65,6 +94,16 @@
 		CB4C9CD82D66954D0074A095 /* ThemeToggleButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeToggleButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		CB1EFE0D2D683116009C8FE7 /* Exceptions for "MoodieWidget" folder in "MoodieWidgetExtension" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = CB1EFDF82D683114009C8FE7 /* MoodieWidgetExtension */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		CB1EFD8C2D66D578009C8FE7 /* Service */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
@@ -74,6 +113,14 @@
 		CB1EFD902D66E3B4009C8FE7 /* ViewModel */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		CB1EFDFF2D683114009C8FE7 /* MoodieWidget */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				CB1EFE0D2D683116009C8FE7 /* Exceptions for "MoodieWidget" folder in "MoodieWidgetExtension" target */,
+			);
+			path = MoodieWidget;
 			sourceTree = "<group>";
 		};
 		CB4C9C5A2D6400D90074A095 /* MoodieTests */ = {
@@ -109,6 +156,15 @@
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		CB1EFDF62D683114009C8FE7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CB1EFDFE2D683114009C8FE7 /* SwiftUI.framework in Frameworks */,
+				CB1EFDFC2D683114009C8FE7 /* WidgetKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		CB4C9C422D6400D80074A095 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -133,12 +189,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		CB1EFDFA2D683114009C8FE7 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				CB1EFDFB2D683114009C8FE7 /* WidgetKit.framework */,
+				CB1EFDFD2D683114009C8FE7 /* SwiftUI.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		CB4C9C3C2D6400D80074A095 = {
 			isa = PBXGroup;
 			children = (
+				CB1EFE102D68313A009C8FE7 /* MoodieWidgetExtension.entitlements */,
 				CB4C9C942D64A4B70074A095 /* Moodie */,
 				CB4C9C5A2D6400D90074A095 /* MoodieTests */,
 				CB4C9C642D6400D90074A095 /* MoodieUITests */,
+				CB1EFDFF2D683114009C8FE7 /* MoodieWidget */,
+				CB1EFDFA2D683114009C8FE7 /* Frameworks */,
 				CB4C9C462D6400D80074A095 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -149,6 +217,7 @@
 				CB4C9C452D6400D80074A095 /* Moodie.app */,
 				CB4C9C572D6400D90074A095 /* MoodieTests.xctest */,
 				CB4C9C612D6400D90074A095 /* MoodieUITests.xctest */,
+				CB1EFDF92D683114009C8FE7 /* MoodieWidgetExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -171,6 +240,7 @@
 		CB4C9C942D64A4B70074A095 /* Moodie */ = {
 			isa = PBXGroup;
 			children = (
+				CB1EFE0F2D68312F009C8FE7 /* Moodie.entitlements */,
 				CB1EFD9D2D67AA24009C8FE7 /* Info.plist */,
 				CB1EFD902D66E3B4009C8FE7 /* ViewModel */,
 				CB1EFD8C2D66D578009C8FE7 /* Service */,
@@ -202,6 +272,28 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		CB1EFDF82D683114009C8FE7 /* MoodieWidgetExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CB1EFE0E2D683116009C8FE7 /* Build configuration list for PBXNativeTarget "MoodieWidgetExtension" */;
+			buildPhases = (
+				CB1EFDF52D683114009C8FE7 /* Sources */,
+				CB1EFDF62D683114009C8FE7 /* Frameworks */,
+				CB1EFDF72D683114009C8FE7 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				CB1EFDFF2D683114009C8FE7 /* MoodieWidget */,
+			);
+			name = MoodieWidgetExtension;
+			packageProductDependencies = (
+			);
+			productName = MoodieWidgetExtension;
+			productReference = CB1EFDF92D683114009C8FE7 /* MoodieWidgetExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 		CB4C9C442D6400D80074A095 /* Moodie */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = CB4C9C6B2D6400D90074A095 /* Build configuration list for PBXNativeTarget "Moodie" */;
@@ -209,10 +301,12 @@
 				CB4C9C412D6400D80074A095 /* Sources */,
 				CB4C9C422D6400D80074A095 /* Frameworks */,
 				CB4C9C432D6400D80074A095 /* Resources */,
+				CB1EFE0A2D683116009C8FE7 /* Embed Foundation Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				CB1EFE082D683116009C8FE7 /* PBXTargetDependency */,
 			);
 			fileSystemSynchronizedGroups = (
 				CB1EFD8C2D66D578009C8FE7 /* Service */,
@@ -285,6 +379,9 @@
 				LastSwiftUpdateCheck = 1620;
 				LastUpgradeCheck = 1620;
 				TargetAttributes = {
+					CB1EFDF82D683114009C8FE7 = {
+						CreatedOnToolsVersion = 16.2;
+					};
 					CB4C9C442D6400D80074A095 = {
 						CreatedOnToolsVersion = 16.2;
 					};
@@ -315,11 +412,19 @@
 				CB4C9C442D6400D80074A095 /* Moodie */,
 				CB4C9C562D6400D90074A095 /* MoodieTests */,
 				CB4C9C602D6400D90074A095 /* MoodieUITests */,
+				CB1EFDF82D683114009C8FE7 /* MoodieWidgetExtension */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		CB1EFDF72D683114009C8FE7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		CB4C9C432D6400D80074A095 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -346,6 +451,13 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		CB1EFDF52D683114009C8FE7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		CB4C9C412D6400D80074A095 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -384,6 +496,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		CB1EFE082D683116009C8FE7 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CB1EFDF82D683114009C8FE7 /* MoodieWidgetExtension */;
+			targetProxy = CB1EFE072D683116009C8FE7 /* PBXContainerItemProxy */;
+		};
 		CB4C9C592D6400D90074A095 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = CB4C9C442D6400D80074A095 /* Moodie */;
@@ -397,6 +514,64 @@
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
+		CB1EFE0B2D683116009C8FE7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_ENTITLEMENTS = MoodieWidgetExtension.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 9LBU4698Q5;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = MoodieWidget/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = MoodieWidget;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 18.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.vzane.Moodie.MoodieWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		CB1EFE0C2D683116009C8FE7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_ENTITLEMENTS = MoodieWidgetExtension.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 9LBU4698Q5;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = MoodieWidget/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = MoodieWidget;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 18.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.vzane.Moodie.MoodieWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 		CB4C9C692D6400D90074A095 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -521,6 +696,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Moodie/Moodie.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Moodie/Preview Content\"";
@@ -554,6 +730,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Moodie/Moodie.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Moodie/Preview Content\"";
@@ -657,6 +834,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		CB1EFE0E2D683116009C8FE7 /* Build configuration list for PBXNativeTarget "MoodieWidgetExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CB1EFE0B2D683116009C8FE7 /* Debug */,
+				CB1EFE0C2D683116009C8FE7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		CB4C9C402D6400D80074A095 /* Build configuration list for PBXProject "Moodie" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
