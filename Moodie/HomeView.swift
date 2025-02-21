@@ -3,6 +3,41 @@ import SwiftUI
 struct HomeView: View {
     @StateObject private var notificationManager = NotificationManager.shared
     
+    // 定义通知使用的图片名称
+    private let notificationImages = [
+        "safe-zone": UIImage(systemName: "checkmark.shield.fill")!,
+        "alert-high": UIImage(systemName: "exclamationmark.triangle.fill")!,
+        "alert-medium": UIImage(systemName: "exclamationmark.circle.fill")!,
+        "alert-low": UIImage(systemName: "info.circle.fill")!
+    ]
+    
+    func saveSystemImageToAssets() {
+           // 确保文档目录可用
+           guard let documentsDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first else {
+               return
+           }
+           
+           // 保存每个系统图片
+           for (name, image) in notificationImages {
+               let fileURL = documentsDirectory.appendingPathComponent("\(name).png")
+               
+               // 将 UIImage 转换为 PNG 数据
+               if let data = image.pngData() {
+                   // 写入文件
+                   try? data.write(to: fileURL)
+                   
+                   // 创建通知附件
+                   notificationManager.sendNotificationWithImage(
+                       title: "Safety Update",
+                       body: "Your area is currently safe",
+                       imageName: name,
+                       imageURL: fileURL
+                   )
+               }
+           }
+       }
+    
+    
     var body: some View {
         NavigationView {
             ScrollView {
@@ -18,6 +53,60 @@ struct HomeView: View {
                     
                     // 最近活动
                     RecentActivityCard()
+                    
+                    if !notificationManager.isAuthorized {
+                                          Button("Enable Notifications") {
+                                              notificationManager.requestAuthorization()
+                                          }
+                                          .padding()
+                                          .background(Color.purple.opacity(0.1))
+                                          .cornerRadius(10)
+                                      }
+                    Button("Send Test Notification") {
+                                                 notificationManager.sendTestNotification()
+                                             }
+                                             .padding()
+                                             .background(Color.blue.opacity(0.1))
+                                             .cornerRadius(10)
+                                              
+                                              Button("Send Automatic Test Notification") {
+                                                 // notificationManager.sendTestNotification()
+                                                  // 设置每30分钟发送一次通知
+                                                  notificationManager.scheduleDefaultReminders()
+                          //                            .scheduleNotification(
+                          //                            title: "Moodie Safety Reminder",
+                          //                            body: "Regular safety check reminder",
+                          //                            interval: 1800 // 30 minutes in seconds
+                          //                        )
+                                              }
+                                              
+                                              Button("Send Safety Alert") {
+                                                  notificationManager.sendSafetyAlert(
+                                                      level: "High",
+                                                      message: "Unusual activity detected in your area"
+                                                  )
+                                              }
+
+                                              Button("Send Image Notification") {
+                                                  notificationManager.sendNotificationWithImage(
+                                                      title: "Safety Update",
+                                                      body: "Your area is currently safe",
+                                                      imageName: "safe-zone"  // 确保在 Assets.xcassets 中有这个图片
+                                                  )
+                                              }
+                                              .padding()
+                                              .background(Color.blue.opacity(0.1))
+                                              .cornerRadius(10)
+                                              
+                                              // 测试按钮
+                                                           Button("Send Notification with Image222") {
+                                                               saveSystemImageToAssets()
+                                                           }
+                                                           .padding()
+                                                           .background(Color.blue.opacity(0.1))
+                                                           .cornerRadius(10)
+                    
+                    
                 }
                 .padding()
             }
@@ -27,21 +116,15 @@ struct HomeView: View {
                     HStack(spacing: 15) {
                         Button(action: {
                             // 发送即时通知
-                            notificationManager.sendImmediateNotification(
-                                title: "Moodie Safety Alert",
-                                body: "Time to check your safety status!"
-                            )
+//                            notificationManager.sendImmediateNotification(
+//                                title: "Moodie Safety Alert",
+//                                body: "Time to check your safety status!"
+//                            )
                         }) {
                             Image(systemName: "bell.fill")
                                 .foregroundColor(.purple)
                         }
                         Button(action: {
-                            // 设置每30分钟发送一次通知
-                            notificationManager.scheduleNotification(
-                                title: "Moodie Safety Reminder",
-                                body: "Regular safety check reminder",
-                                interval: 1800 // 30 minutes in seconds
-                            )
                         }) {
                             Image(systemName: "moon.fill")
                                 .foregroundColor(.purple)
@@ -59,6 +142,7 @@ struct HomeView: View {
         }
     }
 }
+
 
 // 安全状态卡片组件
 struct SafetyStatusCard: View {
@@ -412,7 +496,7 @@ struct RecentActivityCard: View {
         .cornerRadius(15)
         .shadow(radius: 5)
     }
-} 
+}
 
 // 预览
 struct HomeView_Previews: PreviewProvider {
