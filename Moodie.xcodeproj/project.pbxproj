@@ -202,6 +202,13 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		CB1EFE1E2D68BC7C009C8FE7 /* view */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = view;
+			sourceTree = "<group>";
+		};
 		CB4C9C3C2D6400D80074A095 = {
 			isa = PBXGroup;
 			children = (
@@ -244,6 +251,7 @@
 		CB4C9C942D64A4B70074A095 /* Moodie */ = {
 			isa = PBXGroup;
 			children = (
+				CB1EFE1E2D68BC7C009C8FE7 /* view */,
 				CB1EFE192D684B30009C8FE7 /* SignLanguageView.swift */,
 				CB1EFE112D683ED3009C8FE7 /* OCRView.swift */,
 				CB1EFE0F2D68312F009C8FE7 /* Moodie.entitlements */,

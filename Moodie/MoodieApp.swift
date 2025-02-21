@@ -12,6 +12,8 @@ import SwiftData
 struct MoodieApp: App {
     @StateObject private var notificationManager = NotificationManager.shared
     
+   // let locationManager = LocationManager()
+    
     var sharedModelContainer: ModelContainer = {
         let schema = Schema([
             Item.self,
@@ -28,6 +30,10 @@ struct MoodieApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()
+//                .environmentObject(WeatherAlertService(
+//                    locationManager: locationManager,
+//                    notificationManager: notificationManager
+//                ))
                 .onAppear {
                     notificationManager.requestAuthorization()
                 }
