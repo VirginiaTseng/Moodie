@@ -10,6 +10,8 @@
 		CB1EFDFC2D683114009C8FE7 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB1EFDFB2D683114009C8FE7 /* WidgetKit.framework */; };
 		CB1EFDFE2D683114009C8FE7 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB1EFDFD2D683114009C8FE7 /* SwiftUI.framework */; };
 		CB1EFE092D683116009C8FE7 /* MoodieWidgetExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = CB1EFDF92D683114009C8FE7 /* MoodieWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		CB1EFE122D683ED5009C8FE7 /* OCRView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB1EFE112D683ED3009C8FE7 /* OCRView.swift */; };
+		CB1EFE1A2D684B32009C8FE7 /* SignLanguageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB1EFE192D684B30009C8FE7 /* SignLanguageView.swift */; };
 		CB4C9C952D64A4B70074A095 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB4C9C892D64A4B70074A095 /* MainView.swift */; };
 		CB4C9C962D64A4B70074A095 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB4C9C8A2D64A4B70074A095 /* OnboardingView.swift */; };
 		CB4C9C982D64A4B70074A095 /* ConnectionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB4C9C8E2D64A4B70074A095 /* ConnectionManager.swift */; };
@@ -73,6 +75,8 @@
 		CB1EFDFD2D683114009C8FE7 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
 		CB1EFE0F2D68312F009C8FE7 /* Moodie.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Moodie.entitlements; sourceTree = "<group>"; };
 		CB1EFE102D68313A009C8FE7 /* MoodieWidgetExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MoodieWidgetExtension.entitlements; sourceTree = "<group>"; };
+		CB1EFE112D683ED3009C8FE7 /* OCRView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OCRView.swift; sourceTree = "<group>"; };
+		CB1EFE192D684B30009C8FE7 /* SignLanguageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignLanguageView.swift; sourceTree = "<group>"; };
 		CB4C9C452D6400D80074A095 /* Moodie.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Moodie.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CB4C9C572D6400D90074A095 /* MoodieTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MoodieTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CB4C9C612D6400D90074A095 /* MoodieUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MoodieUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -240,6 +244,8 @@
 		CB4C9C942D64A4B70074A095 /* Moodie */ = {
 			isa = PBXGroup;
 			children = (
+				CB1EFE192D684B30009C8FE7 /* SignLanguageView.swift */,
+				CB1EFE112D683ED3009C8FE7 /* OCRView.swift */,
 				CB1EFE0F2D68312F009C8FE7 /* Moodie.entitlements */,
 				CB1EFD9D2D67AA24009C8FE7 /* Info.plist */,
 				CB1EFD902D66E3B4009C8FE7 /* ViewModel */,
@@ -467,12 +473,14 @@
 				CB4C9CAF2D64B8080074A095 /* HomeView.swift in Sources */,
 				CB4C9C962D64A4B70074A095 /* OnboardingView.swift in Sources */,
 				CB4C9CAD2D64AE7F0074A095 /* LoginView.swift in Sources */,
+				CB1EFE122D683ED5009C8FE7 /* OCRView.swift in Sources */,
 				CB4C9CA62D64ABD40074A095 /* CustomTextClassifier.swift in Sources */,
 				CB4C9CB52D64C16F0074A095 /* EmergencyView.swift in Sources */,
 				CB4C9CA82D64AE3E0074A095 /* ProfileView.swift in Sources */,
 				CB4C9C982D64A4B70074A095 /* ConnectionManager.swift in Sources */,
 				CB4C9CB12D64BB390074A095 /* CommunityView.swift in Sources */,
 				CB4C9C992D64A4B70074A095 /* ContentView.swift in Sources */,
+				CB1EFE1A2D684B32009C8FE7 /* SignLanguageView.swift in Sources */,
 				CB4C9CD92D6695520074A095 /* ThemeToggleButton.swift in Sources */,
 				CB4C9CA42D64AAFA0074A095 /* SemanticAnalysisManager.swift in Sources */,
 				CB4C9C9C2D64A4B70074A095 /* MoodieApp.swift in Sources */,
@@ -527,7 +535,7 @@
 				INFOPLIST_FILE = MoodieWidget/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = MoodieWidget;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
-				IPHONEOS_DEPLOYMENT_TARGET = 18.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -556,7 +564,7 @@
 				INFOPLIST_FILE = MoodieWidget/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = MoodieWidget;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
-				IPHONEOS_DEPLOYMENT_TARGET = 18.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -706,6 +714,7 @@
 				INFOPLIST_FILE = Moodie/Info.plist;
 				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "We need your location to provide precise weather information";
 				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = "We need your location to provide precise weather information";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "We need your location to provide precise weather information";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -740,6 +749,7 @@
 				INFOPLIST_FILE = Moodie/Info.plist;
 				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "We need your location to provide precise weather information";
 				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = "We need your location to provide precise weather information";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "We need your location to provide precise weather information";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

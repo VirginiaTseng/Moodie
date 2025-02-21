@@ -10,6 +10,7 @@ import MapKit
 
 struct MapView: View {
     @StateObject private var locationManager = LocationManager()
+    
     @State private var searchText = ""
     @State private var region = MKCoordinateRegion(
         center: CLLocationCoordinate2D(latitude: 37.7749, longitude: -122.4194),
@@ -19,8 +20,15 @@ struct MapView: View {
     var body: some View {
         NavigationView {
             VStack(spacing: 0) {
+                if let location = locationManager.location {
+                  Text("Latitude: \(location.coordinate.latitude)")
+                  Text("Longitude: \(location.coordinate.longitude)")
+              } else {
+                  Text("Fetching location...")
+              }
                 // 搜索栏和过滤器
                 VStack(spacing: 16) {
+                  
                     // 搜索栏
                     HStack {
                         Image(systemName: "magnifyingglass")

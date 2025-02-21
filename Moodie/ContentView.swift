@@ -42,6 +42,12 @@ struct ContentView: View {
 //                            }
 //                            .tag(2)
 //
+                        OCRView()
+                                   .tabItem {
+                                       Image(systemName: "exclamationmark.triangle.fill")
+                                       Text("OCR")
+                                   }
+                                   .tag(2)
                         CommunityView()
                             .tabItem {
                                 Image(systemName: "heart.fill")
