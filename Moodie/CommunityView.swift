@@ -38,7 +38,7 @@ struct CommunityView: View {
                 }
                 .padding()
             }
-            .navigationTitle("Moodie")
+            //.navigationTitle("Moodie")
             .toolbar {
                 ToolbarItem(placement: .navigationBarTrailing) {
                     HStack(spacing: 15) {

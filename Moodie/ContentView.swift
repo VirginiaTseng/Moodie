@@ -14,10 +14,11 @@ struct ContentView: View {
     
     var body: some View {
         // debug unmask code below
-        Button("Reset Onboarding") {
-            UserDefaults.standard.removeObject(forKey: "hasSeenOnboarding")
-            hasSeenOnboarding = false
-        }
+//        Button("Reset Onboarding") {
+//            UserDefaults.standard.removeObject(forKey: "hasSeenOnboarding")
+//            hasSeenOnboarding = false
+//        }
+        
         
         if hasSeenOnboarding {
             TabView(selection: $selectedTab) {

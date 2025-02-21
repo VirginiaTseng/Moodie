@@ -99,12 +99,21 @@ struct HomeView: View {
                                               .cornerRadius(10)
                                               
                                               // 测试按钮
-                                                           Button("Send Notification with Image222") {
-                                                               saveSystemImageToAssets()
-                                                           }
-                                                           .padding()
-                                                           .background(Color.blue.opacity(0.1))
-                                                           .cornerRadius(10)
+                                               Button("Send Notification with Image222") {
+                                                   saveSystemImageToAssets()
+                                               }
+                                               .padding()
+                                               .background(Color.blue.opacity(0.1))
+                                               .cornerRadius(10)
+                    
+                            Button("Reset Onboarding") {
+                                UserDefaults.standard.setValue(false, forKey:"hasSeenOnboarding")//.removeObject(forKey: "hasSeenOnboarding")
+                                    print("🛠️ Debug: hasSeenOnboarding reset to false") // ✅ Debug Log
+                               // hasSeenOnboarding = false
+                            }
+                            .padding()
+                        .background(Color.blue.opacity(0.1))
+                        .cornerRadius(10)
                     
                     
                 }

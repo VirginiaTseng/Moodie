@@ -12,17 +12,19 @@ struct MapView: View {
     @StateObject private var locationManager = LocationManager()
     
     @State private var searchText = ""
-    @State private var region = MKCoordinateRegion(
-        center: CLLocationCoordinate2D(latitude: 37.7749, longitude: -122.4194),
-        span: MKCoordinateSpan(latitudeDelta: 0.05, longitudeDelta: 0.05)
-    )
+//    @State private var region = MKCoordinateRegion(
+//        center: CLLocationCoordinate2D(latitude: 52.1332, longitude: -106.6700),
+//        span: MKCoordinateSpan(latitudeDelta: 0.05, longitudeDelta: 0.05)
+//    )
     
     var body: some View {
         NavigationView {
             VStack(spacing: 0) {
                 if let location = locationManager.location {
-                  Text("Latitude: \(location.coordinate.latitude)")
-                  Text("Longitude: \(location.coordinate.longitude)")
+                    HStack {
+                        Text("Latitude: \(location.coordinate.latitude)")
+                        Text("Longitude: \(location.coordinate.longitude)")
+                    }
               } else {
                   Text("Fetching location...")
               }
@@ -102,7 +104,6 @@ struct MapView: View {
                 .padding(.vertical)
                 .background(Color.white)
             }
-            .navigationTitle("Moodie")
             .toolbar {
                 ToolbarItem(placement: .navigationBarTrailing) {
                     HStack(spacing: 15) {
