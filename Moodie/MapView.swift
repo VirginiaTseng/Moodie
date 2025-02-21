@@ -104,24 +104,25 @@ struct MapView: View {
                 .padding(.vertical)
                 .background(Color.white)
             }
-            .toolbar {
-                ToolbarItem(placement: .navigationBarTrailing) {
-                    HStack(spacing: 15) {
-                        Button(action: {}) {
-                            Image(systemName: "bell.fill")
-                                .foregroundColor(.purple)
-                        }
-                        Button(action: {}) {
-                            Image(systemName: "moon.fill")
-                                .foregroundColor(.purple)
-                        }
-                        Button(action: {}) {
-                            Image(systemName: "mic.fill")
-                                .foregroundColor(.purple)
-                        }
-                    }
-                }
-            }
+            .commonToolbar()
+//            .toolbar {
+//                ToolbarItem(placement: .navigationBarTrailing) {
+//                    HStack(spacing: 15) {
+//                        Button(action: {}) {
+//                            Image(systemName: "bell.fill")
+//                                .foregroundColor(.purple)
+//                        }
+//                        Button(action: {}) {
+//                            Image(systemName: "moon.fill")
+//                                .foregroundColor(.purple)
+//                        }
+//                        Button(action: {}) {
+//                            Image(systemName: "mic.fill")
+//                                .foregroundColor(.purple)
+//                        }
+//                    }
+//                }
+//            }
         }
     }
 }

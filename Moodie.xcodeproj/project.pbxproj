@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CB0671F82D692D6E00C044BD /* CommonToolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB0671F72D692D6600C044BD /* CommonToolbar.swift */; };
 		CB1EFDFC2D683114009C8FE7 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB1EFDFB2D683114009C8FE7 /* WidgetKit.framework */; };
 		CB1EFDFE2D683114009C8FE7 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB1EFDFD2D683114009C8FE7 /* SwiftUI.framework */; };
 		CB1EFE092D683116009C8FE7 /* MoodieWidgetExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = CB1EFDF92D683114009C8FE7 /* MoodieWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
@@ -69,6 +70,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		CB0671F72D692D6600C044BD /* CommonToolbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonToolbar.swift; sourceTree = "<group>"; };
 		CB1EFD9D2D67AA24009C8FE7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		CB1EFDF92D683114009C8FE7 /* MoodieWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = MoodieWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		CB1EFDFB2D683114009C8FE7 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
@@ -251,6 +253,7 @@
 		CB4C9C942D64A4B70074A095 /* Moodie */ = {
 			isa = PBXGroup;
 			children = (
+				CB0671F72D692D6600C044BD /* CommonToolbar.swift */,
 				CB1EFE1E2D68BC7C009C8FE7 /* view */,
 				CB1EFE192D684B30009C8FE7 /* SignLanguageView.swift */,
 				CB1EFE112D683ED3009C8FE7 /* OCRView.swift */,
@@ -489,6 +492,7 @@
 				CB4C9CB12D64BB390074A095 /* CommunityView.swift in Sources */,
 				CB4C9C992D64A4B70074A095 /* ContentView.swift in Sources */,
 				CB1EFE1A2D684B32009C8FE7 /* SignLanguageView.swift in Sources */,
+				CB0671F82D692D6E00C044BD /* CommonToolbar.swift in Sources */,
 				CB4C9CD92D6695520074A095 /* ThemeToggleButton.swift in Sources */,
 				CB4C9CA42D64AAFA0074A095 /* SemanticAnalysisManager.swift in Sources */,
 				CB4C9C9C2D64A4B70074A095 /* MoodieApp.swift in Sources */,

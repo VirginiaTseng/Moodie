@@ -120,31 +120,42 @@ struct HomeView: View {
                 .padding()
             }
 //            .navigationTitle("Moodie")
-            .toolbar {
-                ToolbarItem(placement: .navigationBarTrailing) {
-                    HStack(spacing: 15) {
-                        Button(action: {
-                            // 发送即时通知
-//                            notificationManager.sendImmediateNotification(
-//                                title: "Moodie Safety Alert",
-//                                body: "Time to check your safety status!"
-//                            )
-                        }) {
-                            Image(systemName: "bell.fill")
-                                .foregroundColor(.purple)
-                        }
-                        Button(action: {
-                        }) {
-                            Image(systemName: "moon.fill")
-                                .foregroundColor(.purple)
-                        }
-                        Button(action: {}) {
-                            Image(systemName: "mic.fill")
-                                .foregroundColor(.purple)
-                        }
-                    }
+            .commonToolbar(
+                notificationAction: {
+                    notificationManager.sendTestNotification()
+                },
+                darkModeAction: {
+                   // isDarkMode.toggle()
+                },
+                voiceAction: {
+                    // 处理语音功能
                 }
-            }
+            )
+//            .toolbar {
+//                ToolbarItem(placement: .navigationBarTrailing) {
+//                    HStack(spacing: 15) {
+//                        Button(action: {
+//                            // 发送即时通知
+////                            notificationManager.sendImmediateNotification(
+////                                title: "Moodie Safety Alert",
+////                                body: "Time to check your safety status!"
+////                            )
+//                        }) {
+//                            Image(systemName: "bell.fill")
+//                                .foregroundColor(.purple)
+//                        }
+//                        Button(action: {
+//                        }) {
+//                            Image(systemName: "moon.fill")
+//                                .foregroundColor(.purple)
+//                        }
+//                        Button(action: {}) {
+//                            Image(systemName: "mic.fill")
+//                                .foregroundColor(.purple)
+//                        }
+//                    }
+//                }
+//            }
             .onAppear {
                 notificationManager.requestAuthorization()
             }
