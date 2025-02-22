@@ -62,6 +62,11 @@ struct ContentView: View {
                                 Text("Profile")
                             }
                             .tag(4)
+                        EmergencyContactView()
+                            .tabItem {
+                                Image(systemName: "phone.circle.fill")
+                                Text("Emergency")
+                            }.tag(5)
                     }
                     .accentColor(.purple)
                     .preferredColorScheme(.light)

@@ -14,7 +14,7 @@ class EmergencyService: ObservableObject {
     }
     
     // Send emergency message
-    func sendEmergencyMessage(to contact: EmergencyContact, 
+    func sendEmergencyMessage(to contact: EmergencyContactPerson,
                             location: CLLocation?,
                             tripInfo: String? = nil) {
         var message = "🆘 Emergency Alert\n"

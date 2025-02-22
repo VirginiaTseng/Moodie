@@ -3,11 +3,11 @@ import SwiftData
 
 struct EmergencyContactView: View {
     @Environment(\.modelContext) private var modelContext
-    @Query private var contacts: [EmergencyContact]
+    @Query private var contacts: [EmergencyContactPerson]
     @StateObject private var locationManager = LocationManager()
     
     @State private var showingAddContact = false
-    @State private var longPressedContact: EmergencyContact?
+    @State private var longPressedContact: EmergencyContactPerson?
     @State private var showingActionSheet = false
     
     var body: some View {
@@ -35,7 +35,7 @@ struct EmergencyContactView: View {
                 // Emergency Contacts Section
                 Section("Emergency Contacts") {
                     ForEach(contacts) { contact in
-                        EmergencyContactRow(contact: contact)
+                        EmergencyContactPersonRow(contact: contact)
                             .onLongPressGesture {
                                 longPressedContact = contact
                                 showingActionSheet = true
@@ -119,10 +119,10 @@ struct EmergencyServiceRow: View {
         }
     }
 }
-
-// Emergency Contact Row View
-struct EmergencyContactRow: View {
-    let contact: EmergencyContact
+//
+//// Emergency Contact Row View
+struct EmergencyContactPersonRow: View {
+    let contact: EmergencyContactPerson
     
     var body: some View {
         VStack(alignment: .leading) {
@@ -147,3 +147,50 @@ struct EmergencyContactRow: View {
         }
     }
 } 
+
+
+struct AddEmergencyContactView: View {
+    @Environment(\.modelContext) private var modelContext
+    @Environment(\.dismiss) var dismiss
+    
+    @State private var name = ""
+    @State private var phoneNumber = ""
+    @State private var relationship = ""
+    @State private var shareLocation = true
+    @State private var shareTrip = true
+    
+    var body: some View {
+        NavigationView {
+            Form {
+                Section("Contact Information") {
+                    TextField("Name", text: $name)
+                    TextField("Phone Number", text: $phoneNumber)
+                        .keyboardType(.phonePad)
+                    TextField("Relationship", text: $relationship)
+                }
+                
+                Section("Sharing Settings") {
+                    Toggle("Share Location", isOn: $shareLocation)
+                    Toggle("Share Trip", isOn: $shareTrip)
+                }
+            }
+            .navigationTitle("Add Emergency Contact")
+            .navigationBarItems(
+                leading: Button("Cancel") { dismiss() },
+                trailing: Button("Save") { saveContact() }
+            )
+        }
+    }
+    
+    private func saveContact() {
+        let contact = EmergencyContactPerson(
+            name: name,
+            phoneNumber: phoneNumber,
+            relationship: relationship,
+            shareLocation: shareLocation,
+            shareTrip: shareTrip
+        )
+        modelContext.insert(contact)
+        dismiss()
+    }
+}

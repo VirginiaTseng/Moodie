@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		CB0671F82D692D6E00C044BD /* CommonToolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB0671F72D692D6600C044BD /* CommonToolbar.swift */; };
+		CB0672742D694D7300C044BD /* EmergencyContactView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB0672722D694D7300C044BD /* EmergencyContactView.swift */; };
+		CB0672772D694E1300C044BD /* EmergencyContactPerson.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB0672752D694E1300C044BD /* EmergencyContactPerson.swift */; };
 		CB1EFDFC2D683114009C8FE7 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB1EFDFB2D683114009C8FE7 /* WidgetKit.framework */; };
 		CB1EFDFE2D683114009C8FE7 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB1EFDFD2D683114009C8FE7 /* SwiftUI.framework */; };
 		CB1EFE092D683116009C8FE7 /* MoodieWidgetExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = CB1EFDF92D683114009C8FE7 /* MoodieWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
@@ -71,6 +73,8 @@
 
 /* Begin PBXFileReference section */
 		CB0671F72D692D6600C044BD /* CommonToolbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonToolbar.swift; sourceTree = "<group>"; };
+		CB0672722D694D7300C044BD /* EmergencyContactView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmergencyContactView.swift; sourceTree = "<group>"; };
+		CB0672752D694E1300C044BD /* EmergencyContactPerson.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmergencyContactPerson.swift; sourceTree = "<group>"; };
 		CB1EFD9D2D67AA24009C8FE7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		CB1EFDF92D683114009C8FE7 /* MoodieWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = MoodieWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		CB1EFDFB2D683114009C8FE7 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
@@ -195,6 +199,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		CB0672762D694E1300C044BD /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				CB0672752D694E1300C044BD /* EmergencyContactPerson.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		CB1EFDFA2D683114009C8FE7 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -246,6 +258,7 @@
 		CB4C9C8B2D64A4B70074A095 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				CB0672722D694D7300C044BD /* EmergencyContactView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -253,7 +266,8 @@
 		CB4C9C942D64A4B70074A095 /* Moodie */ = {
 			isa = PBXGroup;
 			children = (
-				CB0671F72D692D6600C044BD /* CommonToolbar.swift */,
+				CB0672762D694E1300C044BD /* Models */,
+				CB4C9CB62D64DD2D0074A095 /* Graphics */,
 				CB1EFE1E2D68BC7C009C8FE7 /* view */,
 				CB1EFE192D684B30009C8FE7 /* SignLanguageView.swift */,
 				CB1EFE112D683ED3009C8FE7 /* OCRView.swift */,
@@ -262,9 +276,9 @@
 				CB1EFD902D66E3B4009C8FE7 /* ViewModel */,
 				CB1EFD8C2D66D578009C8FE7 /* Service */,
 				CB4C9CD82D66954D0074A095 /* ThemeToggleButton.swift */,
-				CB4C9CB62D64DD2D0074A095 /* Graphics */,
 				CB4C9CB42D64C1660074A095 /* EmergencyView.swift */,
 				CB4C9CB22D64C0050074A095 /* MapView.swift */,
+				CB0671F72D692D6600C044BD /* CommonToolbar.swift */,
 				CB4C9CB02D64BB330074A095 /* CommunityView.swift */,
 				CB4C9CAE2D64B8020074A095 /* HomeView.swift */,
 				CB4C9CA52D64ABCC0074A095 /* CustomTextClassifier.swift */,
@@ -481,11 +495,13 @@
 			files = (
 				CB4C9C952D64A4B70074A095 /* MainView.swift in Sources */,
 				CB4C9CB32D64C0090074A095 /* MapView.swift in Sources */,
+				CB0672742D694D7300C044BD /* EmergencyContactView.swift in Sources */,
 				CB4C9CAF2D64B8080074A095 /* HomeView.swift in Sources */,
 				CB4C9C962D64A4B70074A095 /* OnboardingView.swift in Sources */,
 				CB4C9CAD2D64AE7F0074A095 /* LoginView.swift in Sources */,
 				CB1EFE122D683ED5009C8FE7 /* OCRView.swift in Sources */,
 				CB4C9CA62D64ABD40074A095 /* CustomTextClassifier.swift in Sources */,
+				CB0672772D694E1300C044BD /* EmergencyContactPerson.swift in Sources */,
 				CB4C9CB52D64C16F0074A095 /* EmergencyView.swift in Sources */,
 				CB4C9CA82D64AE3E0074A095 /* ProfileView.swift in Sources */,
 				CB4C9C982D64A4B70074A095 /* ConnectionManager.swift in Sources */,
