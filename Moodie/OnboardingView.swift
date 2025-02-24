@@ -51,7 +51,7 @@ struct OnboardingView: View {
             .background(
                 ZStack{
                     FaceGraphic(selection: $selection) //。constant（0）
-                 //   Blob1Graphic(selection: $selection)
+                    FaceGraphic(selection: $selection)
 //                    Blob2Graphic(selection: $selection)
                 }
             )
@@ -217,8 +217,8 @@ struct OnboardingCardView: View {
                                         .init(color: Color.clear, location: 1)]),
                                     startPoint: UnitPoint(x:0.5, y:-3.06162e-17),
                                     endPoint: UnitPoint(x:0.5, y:0.5)), lineWidth:2)
-                                    //.blendMode(.overlay)
-                                    .blur(radius: 5)
+                                    .blendMode(.overlay)
+                                    //.blur(radius: 5)
         )
 //        .background(
 //            VisualEffectBlurView(blurStyle: .systemUltraThinMaterialDark)

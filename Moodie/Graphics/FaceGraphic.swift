@@ -39,15 +39,15 @@ struct FaceGraphic: View {
 //            .overlay(
 //                Line1()
 //            )
-            .overlay(
-               Line2()
-            )
+//            .overlay(
+//               Line2()
+//            )
 //            .overlay(
 //                Stars().opacity(0)
 //            }
 //            .mask(Facemask())
             .frame(width: 522, height: 405, alignment: .center)
-            .offset(x: -90, y: -280)
+            .offset(x: 0, y: -280)
             
             ZStack {
 //                PurplePlanet()

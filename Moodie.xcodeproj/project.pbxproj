@@ -30,7 +30,6 @@
 		CB4C9CAF2D64B8080074A095 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB4C9CAE2D64B8020074A095 /* HomeView.swift */; };
 		CB4C9CB12D64BB390074A095 /* CommunityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB4C9CB02D64BB330074A095 /* CommunityView.swift */; };
 		CB4C9CB32D64C0090074A095 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB4C9CB22D64C0050074A095 /* MapView.swift */; };
-		CB4C9CB52D64C16F0074A095 /* EmergencyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB4C9CB42D64C1660074A095 /* EmergencyView.swift */; };
 		CB4C9CD92D6695520074A095 /* ThemeToggleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB4C9CD82D66954D0074A095 /* ThemeToggleButton.swift */; };
 /* End PBXBuildFile section */
 
@@ -102,7 +101,6 @@
 		CB4C9CAE2D64B8020074A095 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		CB4C9CB02D64BB330074A095 /* CommunityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityView.swift; sourceTree = "<group>"; };
 		CB4C9CB22D64C0050074A095 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
-		CB4C9CB42D64C1660074A095 /* EmergencyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmergencyView.swift; sourceTree = "<group>"; };
 		CB4C9CD82D66954D0074A095 /* ThemeToggleButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeToggleButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -280,7 +278,6 @@
 				CB4C9C882D64A4B70074A095 /* Preview Content */,
 				CB4C9CD82D66954D0074A095 /* ThemeToggleButton.swift */,
 				CB1EFD9D2D67AA24009C8FE7 /* Info.plist */,
-				CB4C9CB42D64C1660074A095 /* EmergencyView.swift */,
 				CB0672812D695A6700C044BD /* EmergencyView2.swift */,
 				CB1EFE0F2D68312F009C8FE7 /* Moodie.entitlements */,
 				CB4C9CB22D64C0050074A095 /* MapView.swift */,
@@ -506,7 +503,6 @@
 				CB1EFE122D683ED5009C8FE7 /* OCRView.swift in Sources */,
 				CB4C9CA62D64ABD40074A095 /* CustomTextClassifier.swift in Sources */,
 				CB0672772D694E1300C044BD /* EmergencyContactPerson.swift in Sources */,
-				CB4C9CB52D64C16F0074A095 /* EmergencyView.swift in Sources */,
 				CB4C9CA82D64AE3E0074A095 /* ProfileView.swift in Sources */,
 				CB4C9C982D64A4B70074A095 /* ConnectionManager.swift in Sources */,
 				CB4C9CB12D64BB390074A095 /* CommunityView.swift in Sources */,
