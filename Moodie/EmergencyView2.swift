@@ -13,7 +13,7 @@ import CoreMotion
 import LocalAuthentication
 
 struct EmergencyView2: View {
-    //@StateObject private var emergencyManager = EmergencyManager() //waiting for 
+    @StateObject private var emergencyManager = EmergencyManager() //waiting for
     @State private var isRecording = false
     @State private var timeRemaining: Int = 60
     @State private var timer: Timer?

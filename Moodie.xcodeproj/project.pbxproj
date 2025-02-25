@@ -558,7 +558,7 @@
 				CODE_SIGN_ENTITLEMENTS = MoodieWidgetExtension.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 9LBU4698Q5;
+				DEVELOPMENT_TEAM = 6H8R9RXL6T;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = MoodieWidget/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = MoodieWidget;
@@ -570,7 +570,7 @@
 					"@executable_path/../../Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.vzane.Moodie.MoodieWidget;
+				PRODUCT_BUNDLE_IDENTIFIER = com.vzhou.Moodie.MoodiWidget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -587,7 +587,7 @@
 				CODE_SIGN_ENTITLEMENTS = MoodieWidgetExtension.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 9LBU4698Q5;
+				DEVELOPMENT_TEAM = 6H8R9RXL6T;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = MoodieWidget/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = MoodieWidget;
@@ -599,7 +599,7 @@
 					"@executable_path/../../Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.vzane.Moodie.MoodieWidget;
+				PRODUCT_BUNDLE_IDENTIFIER = com.vzhou.Moodie.MoodiWidget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -736,7 +736,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Moodie/Preview Content\"";
-				DEVELOPMENT_TEAM = 9LBU4698Q5;
+				DEVELOPMENT_TEAM = 6H8R9RXL6T;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Moodie/Info.plist;
@@ -754,7 +754,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.vzane.Moodie;
+				PRODUCT_BUNDLE_IDENTIFIER = com.vzhou.Moodie;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -771,7 +771,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Moodie/Preview Content\"";
-				DEVELOPMENT_TEAM = 9LBU4698Q5;
+				DEVELOPMENT_TEAM = 6H8R9RXL6T;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Moodie/Info.plist;
@@ -789,7 +789,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.vzane.Moodie;
+				PRODUCT_BUNDLE_IDENTIFIER = com.vzhou.Moodie;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
