@@ -43,7 +43,7 @@ struct HomeView: View {
             ScrollView {
                 VStack(spacing: 20) {
                     // 安全状态卡片
-                    SafetyStatusCard()
+                    SafetyStatusCard()//
                     
                     // 快速操作按钮
                     QuickActionsView()
@@ -118,6 +118,7 @@ struct HomeView: View {
                     
                 }
                 .padding()
+                .background(Color.secondarySystemBackground)
             }
 //            .navigationTitle("Moodie")
             .commonToolbar(
