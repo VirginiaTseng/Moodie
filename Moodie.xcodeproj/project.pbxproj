@@ -12,6 +12,7 @@
 		CB0672772D694E1300C044BD /* EmergencyContactPerson.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB0672752D694E1300C044BD /* EmergencyContactPerson.swift */; };
 		CB0672822D695A6E00C044BD /* EmergencyView2.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB0672812D695A6700C044BD /* EmergencyView2.swift */; };
 		CB0672872D6EC5FD00C044BD /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB0672862D6EC5FD00C044BD /* Theme.swift */; };
+		CB06728C2D702EA200C044BD /* Incident.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB06728B2D702E9C00C044BD /* Incident.swift */; };
 		CB1EFDFC2D683114009C8FE7 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB1EFDFB2D683114009C8FE7 /* WidgetKit.framework */; };
 		CB1EFDFE2D683114009C8FE7 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB1EFDFD2D683114009C8FE7 /* SwiftUI.framework */; };
 		CB1EFE092D683116009C8FE7 /* MoodieWidgetExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = CB1EFDF92D683114009C8FE7 /* MoodieWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
@@ -78,6 +79,7 @@
 		CB0672752D694E1300C044BD /* EmergencyContactPerson.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmergencyContactPerson.swift; sourceTree = "<group>"; };
 		CB0672812D695A6700C044BD /* EmergencyView2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmergencyView2.swift; sourceTree = "<group>"; };
 		CB0672862D6EC5FD00C044BD /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
+		CB06728B2D702E9C00C044BD /* Incident.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Incident.swift; sourceTree = "<group>"; };
 		CB1EFD9D2D67AA24009C8FE7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CB1EFDF92D683114009C8FE7 /* MoodieWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = MoodieWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		CB1EFDFB2D683114009C8FE7 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
@@ -204,6 +206,7 @@
 		CB0672762D694E1300C044BD /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				CB06728B2D702E9C00C044BD /* Incident.swift */,
 				CB0672752D694E1300C044BD /* EmergencyContactPerson.swift */,
 			);
 			path = Models;
@@ -514,6 +517,7 @@
 				CB0671F82D692D6E00C044BD /* CommonToolbar.swift in Sources */,
 				CB4C9CD92D6695520074A095 /* ThemeToggleButton.swift in Sources */,
 				CB4C9CA42D64AAFA0074A095 /* SemanticAnalysisManager.swift in Sources */,
+				CB06728C2D702EA200C044BD /* Incident.swift in Sources */,
 				CB4C9C9C2D64A4B70074A095 /* MoodieApp.swift in Sources */,
 				CB0672872D6EC5FD00C044BD /* Theme.swift in Sources */,
 			);
