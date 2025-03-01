@@ -7,10 +7,13 @@
 
 import SwiftUI
 import SwiftData
+import FirebaseCore
 
 @main
 struct MoodieApp: App {
     @StateObject private var notificationManager = NotificationManager.shared
+    
+    @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
     
    // let locationManager = LocationManager()
     
@@ -40,4 +43,13 @@ struct MoodieApp: App {
         }
         .modelContainer(sharedModelContainer)
     }
+}
+
+class AppDelegate: NSObject, UIApplicationDelegate {
+  func application(_ application: UIApplication,
+                   didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
+    FirebaseApp.configure()
+
+    return true
+  }
 }
