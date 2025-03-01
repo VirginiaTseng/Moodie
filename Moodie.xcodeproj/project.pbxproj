@@ -15,6 +15,9 @@
 		CB06728C2D702EA200C044BD /* Incident.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB06728B2D702E9C00C044BD /* Incident.swift */; };
 		CB06728E2D71E88B00C044BD /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CB06728D2D71E88B00C044BD /* GoogleService-Info.plist */; };
 		CB0672912D71EAF100C044BD /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = CB0672902D71EAF100C044BD /* FirebaseAnalytics */; };
+		CB0672932D73587800C044BD /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = CB0672922D73587800C044BD /* FirebaseFirestore */; };
+		CB0672952D7358B000C044BD /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = CB0672942D7358B000C044BD /* FirebaseAuth */; };
+		CB0672972D7358C000C044BD /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = CB0672962D7358C000C044BD /* FirebaseDatabase */; };
 		CB1EFDFC2D683114009C8FE7 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB1EFDFB2D683114009C8FE7 /* WidgetKit.framework */; };
 		CB1EFDFE2D683114009C8FE7 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB1EFDFD2D683114009C8FE7 /* SwiftUI.framework */; };
 		CB1EFE092D683116009C8FE7 /* MoodieWidgetExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = CB1EFDF92D683114009C8FE7 /* MoodieWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
@@ -187,6 +190,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				CB0672912D71EAF100C044BD /* FirebaseAnalytics in Frameworks */,
+				CB0672952D7358B000C044BD /* FirebaseAuth in Frameworks */,
+				CB0672972D7358C000C044BD /* FirebaseDatabase in Frameworks */,
+				CB0672932D73587800C044BD /* FirebaseFirestore in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -361,6 +367,9 @@
 			name = Moodie;
 			packageProductDependencies = (
 				CB0672902D71EAF100C044BD /* FirebaseAnalytics */,
+				CB0672922D73587800C044BD /* FirebaseFirestore */,
+				CB0672942D7358B000C044BD /* FirebaseAuth */,
+				CB0672962D7358C000C044BD /* FirebaseDatabase */,
 			);
 			productName = Moodie;
 			productReference = CB4C9C452D6400D80074A095 /* Moodie.app */;
@@ -953,6 +962,21 @@
 			isa = XCSwiftPackageProductDependency;
 			package = CB06728F2D71EAF100C044BD /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseAnalytics;
+		};
+		CB0672922D73587800C044BD /* FirebaseFirestore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CB06728F2D71EAF100C044BD /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestore;
+		};
+		CB0672942D7358B000C044BD /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CB06728F2D71EAF100C044BD /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
+		CB0672962D7358C000C044BD /* FirebaseDatabase */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CB06728F2D71EAF100C044BD /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseDatabase;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

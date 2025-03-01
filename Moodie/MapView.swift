@@ -7,23 +7,85 @@
 
 import SwiftUI
 import MapKit
+import FirebaseCore
+import FirebaseFirestore
+
 
 struct MapView: View {
     @StateObject private var locationManager = LocationManager()
+    let firebaseDb = Firestore.firestore()
     
     @State private var searchText = ""
+    @State private var reportStatus: String?
+    
+    @State private var showToast = false  // ⬅️ 是否显示弹窗
+    @State private var toastMessage = ""  // ⬅️ 弹窗消息内容
+    @State private var toastColor = Color.green // ⬅️ 消息颜色（成功: 绿，失败: 红）
+    
 //    @State private var region = MKCoordinateRegion(
 //        center: CLLocationCoordinate2D(latitude: 52.1332, longitude: -106.6700),
 //        span: MKCoordinateSpan(latitudeDelta: 0.05, longitudeDelta: 0.05)
 //    )
+    
+    func reportIncident(latitude: Double, longitude: Double) {
+        let timestamp = Int(Date().timeIntervalSince1970)
+            let userRef = firebaseDb.collection("events").document("user_123-\(timestamp)")
+            
+            userRef.setData([
+               "description": "Fire outbreak detected",
+               "location": GeoPoint(latitude:latitude,longitude:longitude ), // 经纬度格式
+               "timestamp": timestamp * 1000, // 转换为毫秒级时间戳
+               "type": "emergency"
+            ]) { error in
+                if let error = error {
+                    print("Error adding document: \(error)")
+                    reportStatus="Faied to send report❌"
+                    toastMessage = "❌ Report Failed"
+                    toastColor = .red
+                } else {
+                    print("Document added successfully!")
+                    reportStatus="Report Sent✅"
+                    toastMessage = "✅ Report Sent Successfully"
+                    toastColor = .green
+                }
+                
+                showToast = true // 显示 Toast
+                hideToastAfterDelay() // 自动隐藏
+            }
+        
+        //Realtime Database
+//            let usersRef = ref.child("users").childByAutoId()
+//                usersRef.setValue([
+//                    "name": "John Doe",
+//                    "age": 25,
+//                    "email": "john@example.com"
+//                ]) { error, _ in
+//                    if let error = error {
+//                        print("Error adding data: \(error.localizedDescription)")
+//                    } else {
+//                        print("Data added successfully!")
+//                    }
+//                }
+        }
+    
+    // 自动隐藏 Toast（2 秒后）
+        func hideToastAfterDelay() {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+                showToast = false
+            }
+        }
+
     
     var body: some View {
         NavigationView {
             VStack(spacing: 0) {
                 if let location = locationManager.location {
                     HStack {
-                        Text("Latitude: \(location.coordinate.latitude)")
-                        Text("Longitude: \(location.coordinate.longitude)")
+                        Text("Lati: \(location.coordinate.latitude)")
+                        Text("Long: \(location.coordinate.longitude)")
+                        Button("Report") {
+                            reportIncident(latitude: location.coordinate.latitude, longitude: location.coordinate.longitude)
+                        }
                     }
               } else {
                   Text("Fetching location...")
@@ -123,8 +185,24 @@ struct MapView: View {
 //                    }
 //                }
 //            }
+            
+            if showToast {
+                            VStack {
+                                Spacer()
+                                Text(toastMessage)
+                                    .padding()
+                                    .background(toastColor.opacity(0.9))
+                                    .foregroundColor(.white)
+                                    .cornerRadius(10)
+                                    .transition(.opacity)
+                                    .animation(.easeInOut, value: showToast)
+                            }
+                            .padding(.bottom, 50)
+                        }
         }
     }
+    
+    
 }
 
 // 过滤器按钮
