@@ -10,26 +10,6 @@ import CoreLocation
 class IncidentReportService: ObservableObject {
     static let shared = IncidentReportService()
     
-    func reportIncident(
-        type: String,
-        description: String,
-        location: CLLocation
-    ) async throws {
-        let data: [String: Any] = [
-            "location": [
-                "_lat": location.coordinate.latitude,
-                "_long": location.coordinate.longitude
-            ],
-            "type": type,
-            "description": description,
-            "timestamp": Int64(Date().timeIntervalSince1970 * 1000) // 13位时间戳
-        ]
-        
-        //try await db.collection("incidents").addDocument(data: data)
-        // send to react or spring boot
-        
-    }
-    
     private let baseURL = "http://your-api-domain.com/api"
        
        func reportIncident(
