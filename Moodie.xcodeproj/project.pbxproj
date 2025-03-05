@@ -18,6 +18,7 @@
 		CB0672932D73587800C044BD /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = CB0672922D73587800C044BD /* FirebaseFirestore */; };
 		CB0672952D7358B000C044BD /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = CB0672942D7358B000C044BD /* FirebaseAuth */; };
 		CB0672972D7358C000C044BD /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = CB0672962D7358C000C044BD /* FirebaseDatabase */; };
+		CB06729A2D77D88200C044BD /* MLXLLM in Frameworks */ = {isa = PBXBuildFile; productRef = CB0672992D77D88200C044BD /* MLXLLM */; };
 		CB1EFDFC2D683114009C8FE7 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB1EFDFB2D683114009C8FE7 /* WidgetKit.framework */; };
 		CB1EFDFE2D683114009C8FE7 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB1EFDFD2D683114009C8FE7 /* SwiftUI.framework */; };
 		CB1EFE092D683116009C8FE7 /* MoodieWidgetExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = CB1EFDF92D683114009C8FE7 /* MoodieWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
@@ -189,6 +190,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CB06729A2D77D88200C044BD /* MLXLLM in Frameworks */,
 				CB0672912D71EAF100C044BD /* FirebaseAnalytics in Frameworks */,
 				CB0672952D7358B000C044BD /* FirebaseAuth in Frameworks */,
 				CB0672972D7358C000C044BD /* FirebaseDatabase in Frameworks */,
@@ -370,6 +372,7 @@
 				CB0672922D73587800C044BD /* FirebaseFirestore */,
 				CB0672942D7358B000C044BD /* FirebaseAuth */,
 				CB0672962D7358C000C044BD /* FirebaseDatabase */,
+				CB0672992D77D88200C044BD /* MLXLLM */,
 			);
 			productName = Moodie;
 			productReference = CB4C9C452D6400D80074A095 /* Moodie.app */;
@@ -458,6 +461,7 @@
 			minimizedProjectReferenceProxies = 1;
 			packageReferences = (
 				CB06728F2D71EAF100C044BD /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				CB0672982D77D88200C044BD /* XCRemoteSwiftPackageReference "mlx-swift-examples" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = CB4C9C462D6400D80074A095 /* Products */;
@@ -585,7 +589,7 @@
 				CODE_SIGN_ENTITLEMENTS = MoodieWidgetExtension.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 6H8R9RXL6T;
+				DEVELOPMENT_TEAM = 9LBU4698Q5;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = MoodieWidget/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = MoodieWidget;
@@ -597,7 +601,7 @@
 					"@executable_path/../../Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.vzhou.Moodie.MoodiWidget;
+				PRODUCT_BUNDLE_IDENTIFIER = com.vzane.Moodie.MoodieWidget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -614,7 +618,7 @@
 				CODE_SIGN_ENTITLEMENTS = MoodieWidgetExtension.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 6H8R9RXL6T;
+				DEVELOPMENT_TEAM = 9LBU4698Q5;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = MoodieWidget/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = MoodieWidget;
@@ -626,7 +630,7 @@
 					"@executable_path/../../Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.vzhou.Moodie.MoodiWidget;
+				PRODUCT_BUNDLE_IDENTIFIER = com.vzane.Moodie.MoodieWidget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -763,13 +767,15 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Moodie/Preview Content\"";
-				DEVELOPMENT_TEAM = 6H8R9RXL6T;
+				DEVELOPMENT_TEAM = 9LBU4698Q5;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Moodie/Info.plist;
-				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "We need your location to provide precise weather information";
+				INFOPLIST_KEY_CFBundleDisplayName = Moodi;
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "We need background location access to update your location for emergency services";
 				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = "We need your location to provide precise weather information";
-				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "We need your location to provide precise weather information";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "We need your location to show nearby incidents and emergency services";
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "This app requires access to the microphone to record audio.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -781,7 +787,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.vzhou.Moodie;
+				PRODUCT_BUNDLE_IDENTIFIER = com.vzane.Moodie;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -798,13 +804,15 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Moodie/Preview Content\"";
-				DEVELOPMENT_TEAM = 6H8R9RXL6T;
+				DEVELOPMENT_TEAM = 9LBU4698Q5;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Moodie/Info.plist;
-				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "We need your location to provide precise weather information";
+				INFOPLIST_KEY_CFBundleDisplayName = Moodi;
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "We need background location access to update your location for emergency services";
 				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = "We need your location to provide precise weather information";
-				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "We need your location to provide precise weather information";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "We need your location to show nearby incidents and emergency services";
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "This app requires access to the microphone to record audio.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -816,7 +824,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.vzhou.Moodie;
+				PRODUCT_BUNDLE_IDENTIFIER = com.vzane.Moodie;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -955,6 +963,14 @@
 				minimumVersion = 11.9.0;
 			};
 		};
+		CB0672982D77D88200C044BD /* XCRemoteSwiftPackageReference "mlx-swift-examples" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ml-explore/mlx-swift-examples/";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -977,6 +993,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = CB06728F2D71EAF100C044BD /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseDatabase;
+		};
+		CB0672992D77D88200C044BD /* MLXLLM */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CB0672982D77D88200C044BD /* XCRemoteSwiftPackageReference "mlx-swift-examples" */;
+			productName = MLXLLM;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
