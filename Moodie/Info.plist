@@ -2,8 +2,14 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>CFBundleDocumentTypes</key>
+	<array>
+		<dict/>
+	</array>
 	<key>MKDirectionsApplicationSupportedModes</key>
 	<array/>
+	<key>NSSpeechRecognitionUsageDescription</key>
+	<string>Moodie uses speech recognition to transcribe your voice input for journal entries and mood tracking, making it easier to record your thoughts and feelings.</string>
 	<key>UIBackgroundModes</key>
 	<array>
 		<string>remote-notification</string>
