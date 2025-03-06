@@ -9,6 +9,7 @@ import MapKit
 import Combine
 
 class LocationManager: NSObject, ObservableObject, CLLocationManagerDelegate {
+    static let shared = LocationManager()
     private let locationManager = CLLocationManager()
     
     private let locationSubject = PassthroughSubject<CLLocation, Never>()

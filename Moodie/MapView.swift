@@ -12,7 +12,7 @@ import FirebaseFirestore
 
 
 struct MapView: View {
-    @StateObject private var locationManager = LocationManager()
+    @StateObject private var locationManager = LocationManager.shared
     let firebaseDb = Firestore.firestore()
     
     @State private var searchText = ""

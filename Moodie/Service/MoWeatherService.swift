@@ -34,17 +34,19 @@ struct OpenWeatherResponse: Codable {
 @MainActor
 class MoWeatherService: ObservableObject {
     @Published var weatherData: WeatherData?
-    private let apiKey = "YOUR_API_KEY" // 需要在 OpenWeatherMap 注册获取
+    private let apiKey = "7b785011206c450a01aedfe965cfb83c" // 需要在 OpenWeatherMap 注册获取
     
     func fetchWeather(latitude: Double, longitude: Double) async {
         let urlString = "https://api.openweathermap.org/data/2.5/weather?lat=\(latitude)&lon=\(longitude)&appid=\(apiKey)&units=metric"
-        
+        print(urlString)
         guard let url = URL(string: urlString) else { return }
         
         do {
             let (data, _) = try await URLSession.shared.data(from: url)
             let weatherResponse = try JSONDecoder().decode(OpenWeatherResponse.self, from: data)
             
+            print(weatherResponse)
+
             // Convert the response to our WeatherData model
             weatherData = WeatherData(
                 temperature: weatherResponse.main.temp,

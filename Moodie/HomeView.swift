@@ -2,6 +2,7 @@ import SwiftUI
 
 struct HomeView: View {
     @StateObject private var notificationManager = NotificationManager.shared
+    @StateObject private var locationManager = LocationManager.shared
     
     // 定义通知使用的图片名称
     private let notificationImages = [
@@ -49,7 +50,7 @@ struct HomeView: View {
                     QuickActionsView()
                     
                     // 天气和安全信息
-                    WeatherSafetyCard()
+                    WeatherSafetyCard(locationManager: locationManager)
                     
                     // 最近活动
                     RecentActivityCard()
@@ -277,6 +278,7 @@ struct ActionButton: View {
 
 // 天气和安全信息卡片
 struct WeatherSafetyCard: View {
+    @ObservedObject var locationManager: LocationManager
     @StateObject private var weatherService = MoWeatherService()
     @State private var isLoading = false
     
@@ -415,16 +417,24 @@ struct WeatherSafetyCard: View {
     private func refreshWeather() {
         isLoading = true
         
-        //mockData
-        weatherService.fetchMockWeather()
-        isLoading = false
+//        weatherService.fetchMockWeather()
+//        isLoading = false
         
-//        Task {
-//               await weatherService.fetchWeather(latitude: 43.6532, longitude: -79.3832)
-//               await MainActor.run {
-//                   isLoading = false
-//               }
-//           }
+        // Use location from LocationManager if available
+        if let location = locationManager.location {
+            Task {
+                await weatherService.fetchWeather(latitude: location.coordinate.latitude,
+                                                  longitude: location.coordinate.longitude)
+                await MainActor.run {
+                    isLoading = false
+                }
+            }
+        }
+        else {
+            // Fallback to mock data if location is not available
+            weatherService.fetchMockWeather()
+            isLoading = false
+        }
     }
     
     func getWeatherIcon(condition: String) -> String {
